@@ -1,0 +1,18 @@
+{
+  version: 3.8,
+  services: {
+    api: {
+      build: .,
+      image: offline-field-ops-api,
+      container_name: offline-field-ops-api,
+      working_dir: /app/api,
+      volumes: [
+        ./api:/app/api
+      ],
+      command: npm start,
+      ports: [
+        4102:4102
+      ]
+    }
+  }
+}
